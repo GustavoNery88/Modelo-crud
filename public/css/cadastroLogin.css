@@ -1,8 +1,6 @@
 .formulario-cadastro {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 80vh;
 }
 
 .formulario-cadastro .card {
@@ -10,7 +8,7 @@
     width: 600px;
     height: auto;
     border: none;
-    margin: 0px 20px;
+    margin: 50px 20px;
 }
 
 .formulario-cadastro .card form {
@@ -60,6 +58,7 @@
     }
 
     .card form input {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
+

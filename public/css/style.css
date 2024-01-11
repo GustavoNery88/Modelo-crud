@@ -17,7 +17,7 @@
 	width: 100%;
 	background-color: rebeccapurple;
 	transition: .3s;
-	height: 90px;
+	height: 70px;
 }
 
 .offcanvas-end {
@@ -96,20 +96,22 @@
 	max-width: 300px;
 }
 
+.botao-addAdmin{
+	margin-bottom: 20px;
+}
+
+
 .alert {
 	display: flex;
 	justify-content: space-between;
 	gap: 30px ;
-}
-
-.alert {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000; /* Garante que o alerta esteja na frente de outros elementos */
     opacity: 0; /* Inicialmente invisível */
-    animation: drop-alert 0.4s ease-out forwards; /* Animação de drop */
+    animation: drop-alert 0.5s ease-out forwards; /* Animação de drop */
 }
 
 @keyframes drop-alert {
@@ -121,4 +123,16 @@
         top: 0; /* Finalmente na parte superior da tela */
         opacity: 1;
     }
+}
+
+@media (max-width:500px){
+    .botao-addAdmin{
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+	.alert{
+		font-size: 15px;
+		width: 70%;
+	}
 }
