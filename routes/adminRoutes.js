@@ -42,7 +42,7 @@ router.post('/cadastro', async (req, res) => {
         if (adminJaExietente) {
             console.error(err);
             // Se o erro for de chave duplicada para o campo 'email'
-            req.flash('error', 'Este e-mail já está cadastrado.');
+            req.flash('error', 'Este e-mail já está cadastrado!');
             res.redirect('/admin/cadastro');
         }
 
@@ -113,7 +113,7 @@ router.get('/usuarios/apagar/:id', verificarToken, async (req, res) => {
 
 // Para exibir a tela de login de administração
 router.get('/login', (req, res) => {
-    res.render('admin/login!')
+    res.render('admin/login')
 })
 
 router.post('/login', async (req, res) => {
