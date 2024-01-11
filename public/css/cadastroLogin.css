@@ -1,0 +1,65 @@
+.formulario-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.formulario-cadastro .card {
+    background-color: rgb(105, 105, 105);
+    width: 600px;
+    height: auto;
+    border: none;
+    margin: 0px 20px;
+}
+
+.formulario-cadastro .card form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 60px;
+}
+
+
+.formulario-cadastro h1 {
+    margin-top: 13px;
+    text-align: center;
+    color: white;
+
+}
+
+.formulario-cadastro .card form button {
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 6px;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 4px 6px;
+}
+
+.formulario-cadastro .card form button:hover {
+    background-color: rgb(108, 61, 156);
+}
+
+.card form label {
+    color: white;
+}
+
+.card form input {
+    border-radius: 4px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+}
+
+@media (max-width:450px) {
+    .formulario-cadastro .card form {
+        padding: 30px 30px;
+    }
+
+    .formulario-cadastro .card h1 {
+        font-size: 24px;
+    }
+
+    .card form input {
+        font-size: 12px;
+    }
+}

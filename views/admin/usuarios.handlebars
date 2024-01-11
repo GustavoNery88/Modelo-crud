@@ -1,0 +1,34 @@
+<section class="section">
+    <div class="d-flex justify-content-end gap-4">
+        <a href="/admin/cadastro">
+            <button class="btn btn-success">Novo Admin</button>
+        </a>
+    </div>
+    <h2>Lista de usúarios cadastrados:</h2>
+    <hr>
+    {{#each usuarios}}
+    <div class="usuarios-card card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">{{nome}}</h5>
+            <p class="card-text">{{email}}</p>
+            <p class="card-text">{{telefone}}</p>
+            <p class="card-text">{{role}}</p>
+            <div class=" mt-2 d-flex gap-2">
+                <div class="btn-group">
+                    <a href="/admin/usuarios/edit/{{_id}}">
+                        <button class="btn btn-success btn-sm">Editar usúario</button>
+                    </a>
+                </div>
+                <div class="btn-group">
+                    <a href="/admin/usuarios/apagar/{{_id}}">
+                        <button class="btn btn-danger btn-sm">Apagar</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{else}}
+    <h4>Nenhum usuario registrado!</h4>
+    {{/each}}
+</section>
