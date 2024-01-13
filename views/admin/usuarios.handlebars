@@ -20,9 +20,9 @@
                     </a>
                 </div>
                 <div class="btn-group">
-                    <a href="/admin/usuarios/apagar/{{_id}}">
-                        <button class="btn btn-danger btn-sm">Apagar</button>
-                    </a>
+                    <form action="/admin/usuarios/apagar/{{_id}}" method="post">
+                        <button type="submit" class="btn btn-danger btn-sm">Apagar usuário</button>
+                    </form>
                 </div>
             </div>
         </div>

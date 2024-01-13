@@ -10,6 +10,12 @@
 	border: none;
 }
 
+body {
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
 
 .cabecalho {
 	padding: 0.9rem 2%;
@@ -96,7 +102,7 @@
 	max-width: 300px;
 }
 
-.botao-addAdmin{
+.botao-addAdmin {
 	margin-bottom: 20px;
 }
 
@@ -104,34 +110,58 @@
 .alert {
 	display: flex;
 	justify-content: space-between;
-	gap: 30px ;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000; /* Garante que o alerta esteja na frente de outros elementos */
-    opacity: 0; /* Inicialmente invisível */
-    animation: drop-alert 0.5s ease-out forwards; /* Animação de drop */
+	gap: 30px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	/* Garante que o alerta esteja na frente de outros elementos */
+	opacity: 0;
+	/* Inicialmente invisível */
+	animation: drop-alert 0.5s ease-out forwards;
+	/* Animação de drop */
 }
+
+.wrapper {
+	flex: 1;
+  }
+  
+  .content {
+	/* Adicione margem inferior igual à altura do rodapé para evitar que o conteúdo fique atrás do rodapé */
+	margin-bottom: 50px; /* Ajuste conforme necessário */
+  }
+  
+  .footer {
+	width: 100%;
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	margin-top: auto; /* Mantém o rodapé no final, mesmo quando o conteúdo é pequeno */
+  }
 
 @keyframes drop-alert {
-    from {
-        top: -50px; /* Inicialmente acima da tela */
-        opacity: 0;
-    }
-    to {
-        top: 0; /* Finalmente na parte superior da tela */
-        opacity: 1;
-    }
+	from {
+		top: -50px;
+		/* Inicialmente acima da tela */
+		opacity: 0;
+	}
+
+	to {
+		top: 0;
+		/* Finalmente na parte superior da tela */
+		opacity: 1;
+	}
 }
 
-@media (max-width:500px){
-    .botao-addAdmin{
-        margin-bottom: 20px;
-        font-size: 12px;
-    }
+@media (max-width:500px) {
+	.botao-addAdmin {
+		margin-bottom: 20px;
+		font-size: 12px;
+	}
 
-	.alert{
+	.alert {
 		font-size: 15px;
 		width: 70%;
 	}

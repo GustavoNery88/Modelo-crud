@@ -33,7 +33,7 @@ router.post('/cadastro', async (req, res) => {
 
         await novoAdmin.save();
         req.flash('success', 'Admin cadastrado com sucesso!');
-        res.redirect('/admin/cadastro');
+        res.redirect('/admin/usuarios');
 
     } catch (err) {
         const { email } = req.body
@@ -91,7 +91,7 @@ router.post('/usuarios/edit', verificarToken, async (req, res) => {
 
 
 // // Rota para apagar usuários cadastrado
-router.get('/usuarios/apagar/:id', verificarToken, async (req, res) => {
+router.post('/usuarios/apagar/:id', verificarToken, async (req, res) => {
 
     try {
         const deletedUser = await usuario.findOneAndDelete({ _id: req.params.id });
@@ -108,7 +108,6 @@ router.get('/usuarios/apagar/:id', verificarToken, async (req, res) => {
         res.redirect('/admin/usuarios');
     }
 });
-
 
 
 // Para exibir a tela de login de administração
