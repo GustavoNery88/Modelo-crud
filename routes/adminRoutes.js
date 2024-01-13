@@ -12,7 +12,7 @@ router.get('/usuarios', verificarToken, (req, res) => {
     });
 });
 
-
+// Rota exibir tela de cadastro
 router.get('/cadastro', (req, res) => {
     res.render('admin/cadastroAdmin')
 });
@@ -57,13 +57,14 @@ router.post('/cadastro', async (req, res) => {
 });
 
 
-// // Exibir para tela de edição de usuário
+// Exibir para tela de edição de usuário
 router.get('/usuarios/edit/:id', verificarToken, (req, res) => {
     usuario.findOne({ _id: req.params.id }).lean().then((usuarios) => {
         res.render('admin/usuarioEdit', { usuarios: usuarios })
     })
 })
 
+// // Rota para processar a edição de usario
 router.post('/usuarios/edit', verificarToken, async (req, res) => {
     try {
         const existingUser = await usuario.findOne({ email: req.body.email, _id: { $ne: req.body.id } });
