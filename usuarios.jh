@@ -1,0 +1,11 @@
+entity Usuario {
+    nome String required minlength(1) maxlength(50),
+    email String required pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/),
+    idade Integer required min(0)
+}
+
+dto Usuario with mapstruct
+
+service Usuario with serviceClass
+
+paginate Usuario with pagination
